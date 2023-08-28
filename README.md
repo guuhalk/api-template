@@ -5,15 +5,11 @@ Api base para criação de outras apis.
 
 **Requests**
 
-`     `Get ( Paginação, Ordenação )    
-
-`     `Post
-
-`     `Put
-
-`     `Delete
-
-`     `Head
+  Get ( Paginação, Ordenação )    
+  Post
+  Put
+  Delete
+  Head
 
 **Spring Data JPA**
 
