@@ -29,4 +29,8 @@ Api base para criação de outras apis.
 
 **Cache** ( Redis )
 
+**Documentação** ( Swagger )
+
+**Tratamento de Exceptions** ( Swagger )
+
 
