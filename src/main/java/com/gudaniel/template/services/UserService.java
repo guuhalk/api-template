@@ -34,7 +34,7 @@ public class UserService {
 		}
 
 		Optional<User> user = userRepository.findById(id);
-		return user.isPresent() ? user : null;
+		return user != null  ? user : null;
 	}
 
 	public User saveUser(User user) {
