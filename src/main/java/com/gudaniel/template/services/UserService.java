@@ -4,10 +4,12 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.gudaniel.template.core.base.BasePage;
 import com.gudaniel.template.entities.models.User;
 import com.gudaniel.template.repositories.UserRepository;
 
@@ -20,8 +22,9 @@ public class UserService {
 	@Autowired
 	private PasswordEncoder encoder;
 
-	public Page<User> getAllUsers(Pageable pageable) {
-		return userRepository.findAll(pageable);
+	public BasePage<User> getAllUsers(Pageable pageable) {
+		Page<User> listPage = userRepository.findAll(pageable);
+		return new BasePage<>(pageable, new PageImpl<>(listPage.getContent(), pageable, listPage.getTotalElements())); 
 	}
 
 	public Optional<User> getUserById(Long id) {
